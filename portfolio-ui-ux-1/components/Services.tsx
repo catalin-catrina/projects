@@ -44,7 +44,9 @@ function Services() {
     <section className="text-white py-20">
       <div className="container mx-auto flex flex-col gap-8 lg:flex-row">
         <div className="lg:w-1/4 pr-8">
-          <h2 className="sticky top-20 text-6xl text-purple-300 font-extrabold ">SERVICES</h2>
+          <h2 className="top-20 text-6xl text-purple-300 font-extrabold ">
+            SERVICES
+          </h2>
         </div>
         <div className="lg:w-3/4">
           {services.map((service) => (
