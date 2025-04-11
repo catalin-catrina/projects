@@ -19,12 +19,14 @@ function Hero() {
   const color = useMotionValue(COLORS[0]);
 
   useEffect(() => {
-    animate(color, COLORS, {
+    const controls = animate(color, COLORS, {
       ease: "easeInOut",
       duration: 10,
       repeat: Infinity,
       repeatType: "mirror",
     });
+
+    return () => controls.stop();
   });
 
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`;
@@ -40,7 +42,9 @@ function Hero() {
         <span className="inline-block mb-6 rounded-full px-7 py-2.5 bg-gray-600/50 text-sm">
           Open for work
         </span>
-        <h1 className="text-wite/40 text-5xl md:text-7xl font-black">Hi, I am</h1>
+        <h1 className="text-wite/40 text-5xl md:text-7xl font-black">
+          Hi, I am
+        </h1>
         <h1 className="max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent text-5xl md:text-7xl">
           Catalin Catrina
         </h1>
