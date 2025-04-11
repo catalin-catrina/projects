@@ -4,8 +4,13 @@ import React from "react";
 import { motion } from "motion/react";
 
 function Contact() {
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
   return (
-    <section id="contact" className="container overflow-x-clip mx-auto px-4 py-32">
+    <section
+      id="contact"
+      className="container overflow-x-clip mx-auto px-4 py-32"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +67,7 @@ function Contact() {
           className="w-full h-full min-h-[400px] rounded-2xl overflow-hidden"
         >
           <iframe
-            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJp7UPy31nRUcRSWeTc2Svf1M&key=AIzaSyCqToKGjWXOZ-oKpu0ysssiOE02Ppp1S04"
+            src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJp7UPy31nRUcRSWeTc2Svf1M&key=${apiKey}`}
             width="100%"
             height="100%"
             style={{ border: 0 }}
