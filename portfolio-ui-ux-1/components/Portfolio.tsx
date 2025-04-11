@@ -64,7 +64,7 @@ function Portfolio() {
       style={{ backgroundImage }}
       className="py-32 text-white"
     >
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
+      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12">
         <div>
           <h2 className="text-6xl font-bold mb-10">
             Selected <span className="text-purple-400">projects</span>

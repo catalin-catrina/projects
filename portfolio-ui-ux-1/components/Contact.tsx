@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 function Contact() {
   return (
-    <section id="contact" className="max-w-[1200px] overflow-x-clip mx-auto px-4 py-32">
+    <section id="contact" className="container overflow-x-clip mx-auto px-4 py-32">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ function Contact() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="glass p-8 rounded-2xl space-y-8"
+            className="rounded-2xl space-y-8"
           >
             <div className="space-y-2">
               <p className="text-lg text-purple-300">Phone</p>
