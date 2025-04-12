@@ -24,7 +24,7 @@ export const Nav = () => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
-        className="container mx-auto py-10 px-4 md:px-0 text-xl"
+        className="w-full max-w-[1200px] mx-auto py-10 px-4 lg:px-0 text-xl"
       >
         <div className="text-right">
           <ul className="hidden md:flex justify-end gap-8">

@@ -8,12 +8,17 @@ import {
 } from "motion/react";
 import { useEffect } from "react";
 
-const COLORS = [""];
+const COLORS = [
+  "hsl(258 80% 34%)",
+  "hsl(266 80% 34%)",
+  "hsl(236 80% 34%)",
+  "hsl(219 80% 34%)",
+];
 
 export const Hero = () => {
   const color = useMotionValue(COLORS[0]);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(130% 130% at 0% 50%, #000 60%, red`;
+  const backgroundImage = useMotionTemplate`radial-gradient(130% 130% at 0% 40%, #000 50%, ${color}`;
 
   useEffect(() => {
     const controls = animate(color, COLORS, {
