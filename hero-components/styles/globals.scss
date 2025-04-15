@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-1: #0b0b2b;
+  --color-sky-2: #1b2735;
+  --color-sky-3: #090a0f;
+
+  --animate-light-gradient: light-gradient-bg-position 10s infinite ease;
+  --animate-overlay: overlay-opacity-scale 5s infinite ease;
+
+  --animate-background-color: change-background-color 10s infinite ease;
+
+  --animate-typewriter-overlay: typewriter-overlay 5s infinite ease;
+
+  @keyframes light-gradient-bg-position {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes overlay-opacity-scale {
+    0% {
+      opacity: 1;
+      scale: 1.1;
+    }
+
+    50% {
+      opacity: 0.5;
+      scale: 0.9;
+    }
+
+    100% {
+      opacity: 1;
+      scale: 1.1;
+    }
+  }
+
+  @keyframes change-background-color {
+    0% {
+      background-color: oklch(74.6% 0.16 232.661);
+    }
+
+    25% {
+      background-color: oklch(58.8% 0.158 241.966);
+    }
+
+    50% {
+      background-color: oklch(62.3% 0.214 259.815);
+    }
+
+    75% {
+      background-color: oklch(51.1% 0.262 276.966);
+    }
+
+    100% {
+      background-color: oklch(74.6% 0.16 232.661);
+    }
+  }
+}
+
+// Stars component
+.apply-night-gradient {
+  background-image: linear-gradient(
+    to top right,
+    #855988,
+    #483475,
+    #2b2f77,
+    #141852,
+    #070b34
+  );
+}
+
+.stars {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background-color: white;
+  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+    98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+    18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+    35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+    50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+    65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+    80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+    95vw 75vh 2px white;
+  animation: twinkle 6s infinite linear;
+}
+
+.stars::after {
+  content: "";
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background-color: white;
+  box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+    51vw 92vh 2px white, 59vw 78vh 1px white;
+  animation: twinkle 6s infinite linear reverse;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.9;
+    scale: 1.01;
+  }
+
+  50% {
+    opacity: 0.4;
+    scale: 0.99;
+  }
+}
+
+// ShootingStars component
+.shooting-star {
+  width: 100px;
+  height: 2px;
+  background-image: linear-gradient(to right, white, transparent);
+  animation: shoot 3s infinite ease-in;
+  position: absolute;
+}
+
+.shooting-star:nth-child(1) {
+  top: 10%;
+  left: 100px;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+  top: 30%;
+  left: 100px;
+  animation-delay: 2s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 50%;
+  left: 100px;
+  animation-delay: 3s;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(90vw) translateY(50vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+// ParallaxStars component
+.radial-gradient {
+  background-image: radial-gradient(at 50% 100%, #1b2735, #090a0f);
+}
+
+@function create-box-shadows($n) {
+  $shadows: ();
+  @for $i from 1 through $n {
+    $shadow: #{random(2000)}px #{random(2000)}px #fff;
+    $shadows: append($shadows, $shadow, comma);
+  }
+  @return $shadows;
+}
+
+$shadows-small: create-box-shadows(700);
+$shadows-medium: create-box-shadows(300);
+$shadows-large: create-box-shadows(100);
+
+.stars-sm {
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  box-shadow: $shadows-small;
+  animation: move-stars-up 50s linear infinite;
+}
+
+.stars-sm::after {
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  content: " ";
+  background-color: transparent;
+  box-shadow: $shadows-small;
+}
+
+.stars-md {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  box-shadow: $shadows-medium;
+  animation: move-stars-up 100s linear infinite;
+}
+
+.stars-md::after {
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  content: " ";
+  background-color: transparent;
+  box-shadow: $shadows-medium;
+  animation: move-stars-up 100s linear infinite;
+}
+
+.stars-lg {
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  box-shadow: $shadows-large;
+  animation: move-stars-up 150s linear infinite;
+}
+
+.stars-lg::after {
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  content: " ";
+  background-color: transparent;
+  box-shadow: $shadows-large;
+  animation: move-stars-up 100s linear infinite;
+}
+
+@keyframes move-stars-up {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-2000px);
+  }
+}
+
+// Typewriter component
+@keyframes typewriter-overlay {
+  0% {
+    opacity: 0.2;
+    scale: 1.05;
+  }
+
+  50% {
+    opacity: 0.1;
+    scale: 0.95;
+  }
+
+  100% {
+    opacity: 0.2;
+    scale: 1.05;
+  }
+}
+
+.cursor {
+  width: 3px;
+  height: 90px;
+}

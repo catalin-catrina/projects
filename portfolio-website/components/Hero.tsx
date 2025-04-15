@@ -22,7 +22,7 @@ export const Hero = () => {
 
   useEffect(() => {
     const controls = animate(color, COLORS, {
-      duration: 10,
+      duration: 7,
       repeat: Infinity,
       ease: "easeInOut",
       repeatType: "mirror",
@@ -32,8 +32,36 @@ export const Hero = () => {
   }, []);
 
   return (
-    <motion.section style={{ backgroundImage }} className="h-screen relative">
-      mere
+    <motion.section
+      style={{ backgroundImage }}
+      className="h-screen relative z-0 overflow-hidden"
+    >
+      <motion.div
+        className="absolute z-0 top-[-300px] right-[-200px] w-[800px] h-[300px] rounded-full origin-top-right bg-linear-to-l from-purple-800 to-blue-800"
+        // initial={{ rotate: 0 }}
+        // animate={{ rotate: -90 }}
+        // transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+      ></motion.div>
+
+      {/* <div className="absolute z-0 bottom-[-300px] left-[-200px] w-[800px] h-[300px] overflow-visible">
+        <motion.div
+          className="w-full h-full origin-bottom-right rounded-full bg-linear-to-r from-purple-800 to-blue-800"
+          initial={{ rotate: 90 }}
+          animate={{ rotate: 180 }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        ></motion.div>
+      </div> */}
+
+      <div className="absolute z-0 bottom-0 left-[-10vw] w-[800px] h-[300px] overflow-visible">
+        <motion.div
+          className="w-full h-full rounded-full origin-bottom-left bg-linear-to-r from-purple-800 to-blue-800"
+          // Now start at 0 so the element is "sitting up"
+          initial={{ rotate: 180 }}
+          // Animate to 90 (or 90 deg change)
+          animate={{ rotate: 90 }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        ></motion.div>
+      </div>
     </motion.section>
   );
 };
