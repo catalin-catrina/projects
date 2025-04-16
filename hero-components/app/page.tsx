@@ -4,7 +4,7 @@ import GradientShiftsLight from "@/components/GradientShiftsLight";
 import ShootingStars from "@/components/ShootingStars";
 import Stars from "@/components/Stars";
 import ParallaxStars from "@/components/ParallaxStars";
-import Typewriter from "@/components/Typewriter";
+import Typewriter from "@/components/Typewriter/Typewriter";
 
 export default function Home() {
   return (

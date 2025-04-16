@@ -274,6 +274,8 @@ $shadows-large: create-box-shadows(100);
 }
 
 .cursor {
+  display: inline-block;
   width: 3px;
-  height: 90px;
+  height: 40px;
+  background-color: white;
 }
