@@ -16,11 +16,11 @@ const cursorVariants = {
 
 function Cursor() {
   return (
-    <motion.div
+    <motion.span
       variants={cursorVariants}
       animate="blink"
       className="inline-block h-14 w-2 bg-gray-300 ml-2"
-    ></motion.div>
+    ></motion.span>
   );
 }
 

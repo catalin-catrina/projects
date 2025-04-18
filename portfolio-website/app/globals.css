@@ -1,6 +1,43 @@
 @import "tailwindcss";
 
 body {
-  background-color: hsl(266 90% 4%);
-  color: hsl(266 100% 94%);
+  background-color: #141623;
+}
+
+/* Hero */
+
+/* Typewriter component */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 40px;
+  background-color: white;
+}
+
+.cta-button {
+  /* 1) make a transparent border of whatever thickness you like */
+  border: 2px solid transparent;
+  /* 2) tell the border to come from a gradient and slice it at 100% */
+  border-image-source: linear-gradient(
+    to right,
+    oklch(68.5% 0.169 237.323),
+    oklch(51.8% 0.253 323.949)
+  );
+  border-image-slice: 1;
+}
+
+.cta-button::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to right,
+    oklch(68.5% 0.169 237.323),
+    oklch(51.8% 0.253 323.949)
+  );
+  filter: blur(30px);
+  z-index: -1;
 }
