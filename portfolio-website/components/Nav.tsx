@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { id: 0, title: "About", path: "#about" },
   { id: 1, title: "Portfolio", path: "#portfolio" },
   { id: 2, title: "Experience", path: "#experience" },
-  { id: 3, title: "Technologies", path: "#technologies" },
+  { id: 3, title: "Skills", path: "#skills" },
 ];
 
 export const Nav = () => {
@@ -24,13 +24,13 @@ export const Nav = () => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
-        className="px-4 lg:px-0 py-10 border border-gray-700 rounded-3xl my-10 text-xl"
+        className="nav-bg px-4 lg:px-0 py-10 border border-gray-700 rounded-3xl my-10 text-xl"
       >
         <div className="flex justify-between items-center px-5">
           <h3 className="text-2xl text-gray-300">Catalin Catrina</h3>
           <ul className="hidden lg:flex gap-8">
             {NAV_ITEMS.map((item) => (
-              <li key={item.id} className="text-2xl">
+              <li key={item.id} className="text-xl tracking-wider">
                 <Link href={item.path} onClick={() => setMobileNavOpen(false)}>
                   {item.title}
                 </Link>
