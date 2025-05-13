@@ -3,18 +3,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import portfolioProject from "@/assets/portfolio-project.png";
+import { motion } from "motion/react";
 
 export const Portfolio = () => {
   return (
     <section id="portfolio">
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 mb-30">
         <div className="text-center">
-          <h2 className="inline-block mb-20 text-6xl tracking-wide bg-linear-to-r from-fuchsia-600 to-sky-500 bg-clip-text text-transparent">
+          <motion.h2
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, type: "spring" }}
+            className="inline-block mb-20 text-6xl tracking-wide bg-linear-to-r from-fuchsia-600 to-sky-500 bg-clip-text text-transparent"
+          >
             Portfolio
-          </h2>
+          </motion.h2>
         </div>
         <div className="grid-container">
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, type: "spring" }}
             style={{ gridArea: "box-1" }}
             className="grid-item relative border-1 border-gray-800 rounded-2xl"
           >
@@ -56,8 +67,12 @@ export const Portfolio = () => {
                 </p>
               </Link>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, type: "spring" }}
             style={{ gridArea: "box-2" }}
             className="grid-item relative border-1 border-gray-800 rounded-2xl"
           >
@@ -76,8 +91,12 @@ export const Portfolio = () => {
                 <p className="text-xl">Built with Next.js and Framer Motion.</p>
               </Link>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, type: "spring" }}
             style={{ gridArea: "box-3" }}
             className="grid-item relative border-1 border-gray-800 rounded-2xl"
           >
@@ -104,8 +123,12 @@ export const Portfolio = () => {
                 <p className="text-xl">Tech stack: Next.js and Framer Motion</p>
               </Link>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, type: "spring" }}
             style={{ gridArea: "box-4" }}
             className="grid-item relative border-1 border-gray-800 rounded-2xl"
           >
@@ -131,7 +154,7 @@ export const Portfolio = () => {
                 <p className="text-3xl">Not Started: ETA July 1st 2025</p>
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

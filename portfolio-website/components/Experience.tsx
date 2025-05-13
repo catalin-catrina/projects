@@ -16,15 +16,21 @@ export const Experience = () => {
           Experience
         </motion.h2>
         <div className="relative flex flex-col gap-10">
-          <div className="absolute top-0 left-1/2 w-[1px] h-full bg-gray-700 z-[-1]"></div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, delay: 2, type: "spring" }}
+            className="absolute top-0 left-1/2 w-[1px] h-full bg-gray-700 z-[-1]"
+          ></motion.div>
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 3, type: "spring" }}
-            className="card mb-15 border border-gray-700 rounded-4xl px-14 py-8 text-gray-200 text-left w-2/3"
+            className="card mb-15 border border-gray-700 rounded-4xl px-8 md:px-14 py-8 text-gray-200 text-left w-full md:w-2/3"
           >
-            <div className="flex justify-between items-center mb-2">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0 mb-2">
               <h3 className="text-3xl tracking-wider text-gray-200">
                 Frontend Developer
               </h3>
@@ -55,9 +61,9 @@ export const Experience = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 3, type: "spring" }}
-            className="card self-end mb-15 border border-gray-700 rounded-4xl px-14 py-8 text-gray-200 text-left w-2/3"
+            className="card self-end mb-15 border border-gray-700 rounded-4xl px-8 md:px-14 py-8 text-gray-200 text-left w-full md:w-2/3"
           >
-            <div className="flex justify-between items-center mb-2">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0 mb-2">
               <h3 className="text-3xl tracking-wider text-gray-200">
                 Frontend Developer
               </h3>
@@ -84,9 +90,9 @@ export const Experience = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 3, type: "spring" }}
-            className="card border border-gray-700 rounded-4xl px-14 py-8 text-gray-200 text-left w-2/3"
+            className="card border border-gray-700 rounded-4xl px-8 md:px-14 py-8 text-gray-200 text-left w-full md:w-2/3"
           >
-            <div className="flex justify-between items-center mb-2">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0 mb-2">
               <h3 className="text-3xl tracking-wider text-gray-200">
                 Frontend Developer
               </h3>
