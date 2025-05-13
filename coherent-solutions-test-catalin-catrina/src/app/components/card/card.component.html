@@ -1,0 +1,49 @@
+<button *ngFor="let color of colors" [ngClass]="'color-buttons ' + color" (click)="handleClick(color)">
+  {{ color }}
+</button>
+
+<div style="display: flex; gap: 20px; flex-direction: column">
+  <!-- disabled matRipple because it had active effects interfering with the styling we needed -->
+
+  <mat-card
+    [class.isDisabled]="isDisabled"
+    [attr.aria-isDisabled]="isDisabled"
+    color="accent"
+    matRipple
+    [matRippleDisabled]="true"
+    [ngStyle]="{backgroundColor: cardBackgroundColor}"
+  >
+    <mat-card-title> {{ title | truncate : 10 }} </mat-card-title>
+    <mat-card-subtitle>3</mat-card-subtitle>
+    <mat-card-content> {{ subtitle | truncate : 15 }} </mat-card-content>
+    <mat-icon>home</mat-icon>
+  </mat-card>
+
+  <div class="card-container" *ngIf="!isDisabled">
+    <div class="card-container__header">
+      <h1 class="card-container__title">
+        {{ cardContainerTitle | truncate : 30 }}
+      </h1>
+      <mat-icon (click)="handleClose()" class="close">close</mat-icon>
+    </div>
+
+    <p class="card-container__content">
+      Please detach component and add the content that you need. The icon from
+      the bottom should be the same with the icon from cluster card that is
+      active
+      <br />
+      Please detach component and add the content that you need. The icon from
+      the bottom should be the same with the icon from cluster card that is
+      active
+
+      <br />
+      <br />
+      Please detach component and add the content that you need. The icon from
+      the bottom should be the same with the icon from cluster card that is
+      active Please detach component and add the content that you need. The icon
+      from the bottom should be the same with the icon from cluster card that is
+      active Please detach component and add the content that you need.
+    </p>
+    <mat-icon class="copy">file_copy</mat-icon>
+  </div>
+</div>

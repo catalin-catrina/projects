@@ -1,0 +1,16 @@
+@import "variables";
+
+.button-reset {
+  padding: 8px 16px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 40px;
+  background-color: $blue-base;
+  color: #fff;
+}
+
+.inputs-container {
+    @media (max-width: 768px) {
+       margin-top: 16px;
+    }
+}
